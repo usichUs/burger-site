@@ -319,6 +319,8 @@ img {
 
 .card-queen {
   background-image: url("/images/product-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .card-hut {
@@ -489,8 +491,8 @@ img {
 @media (max-width: 950px) {
   .order .container {
     flex-direction: column;
-    padding-right: 0;
-    padding-left: 0;
+    padding-right: 15px;
+    padding-left: 15px;
   }
   .order__text {
     text-align: center;
@@ -502,6 +504,28 @@ img {
 }
 
 @media (max-width: 830px) {
+
+  .header {
+    position: relative;
+    z-index: 2;
+  }
+
+  .welcome {
+    position: relative;
+    z-index: 1;
+  }
+
+  .welcome::before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
+
   .food-list .container {
     justify-content: space-evenly;
   }
@@ -572,4 +596,151 @@ img {
   .product {
     padding: 60px 0 100px;
   }
+
+  .product__card {
+    width: 100%;
+    padding-left: 50%;
+  }
+
+  .product__card:nth-child(even) {
+    padding-right: 50%;
+  }
+}
+
+@media (max-width: 500px) {
+  .header .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header__list {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .welcome {
+    margin-top: -240px;
+    padding-top: 280px;
+    padding-bottom: 80px;
+  }
+
+  .welcome__title {
+    font-style: 30px;
+  }
+
+  .welcome__desc {
+    font-size: 12px;
+  }
+
+  .food-list,
+  .order {
+    padding: 60px 0;
+  }
+
+  .order__title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .order__img {
+    width: 100%;
+  }
+
+  .feedback,
+  .product {
+    padding-bottom: 60px;
+  }
+
+  .download .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .download__title {
+    font-size: 24px;
+  }
+
+  .footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__contacts {
+    align-items: center;
+  }
+
+  .footer__socials-icons {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer .footer__title {
+    margin-bottom: 10px;
+  }
+
+  .footer__list-item + .footer__list-item {
+    margin-top: 7px;
+  }
+
+  .footer__logo {
+    margin-bottom: 10px;
+  }
+
+  .product__card {
+    padding-left: 30px;
+  }
+
+  .product__card:nth-child(even) {
+    padding-right: 30px;
+  }
+
+  .product__desc {
+    opacity: 1;
+  }
+
+  .product__card {
+    position: relative;
+    z-index: 1;
+
+    text-align: center;
+  }
+
+  .product .btn {
+    margin: 0 auto;
+    margin-top: 15px;
+  }
+
+  .product__card::before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
+
+  .welcome::before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
+  /* .card-queen, .card-hut, .card-burger, .card-papa {
+    filter: blur(3px) brightness(30%);
+  } */
 }
